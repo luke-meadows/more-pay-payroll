@@ -27,10 +27,11 @@ export const GlobalStyles = createGlobalStyle`
     --dark-green: #214337;
     --orange: #FAB392;
     --peach: #FDF2DE;
+    --blue: #D3FCEE;
     --light-peach: #FCFAF2;
     --pale-blue: #EEFAF6;
     --dark-gray: #3C3C3B;
-    --container-padding: 0 15rem;
+    --container-horizontal-padding:10rem;
     box-sizing: border-box;
     font-size: 10px;
   }
@@ -55,4 +56,14 @@ export const GlobalStyles = createGlobalStyle`
   button {
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
   }
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Century Gothic';
+    color: var(--dark-green);
+  }
+  p {
+  
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+
 `;

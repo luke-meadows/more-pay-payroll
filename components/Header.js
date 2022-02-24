@@ -12,13 +12,13 @@ export default function Header() {
         <Link href="/">Payroll administration</Link>
         <Link href="/">Advice</Link>
       </Nav>
-      <ContactButton>Contact Us</ContactButton>
+      <Button>Contact Us</Button>
     </StyledHeader>
   );
 }
 
 const StyledHeader = styled.header`
-  padding: var(--container-padding);
+  padding: 0 var(--container-horizontal-padding);
   height: 9rem;
   font-family: 'Century Gothic';
   font-weight: bold;
@@ -28,6 +28,7 @@ const StyledHeader = styled.header`
 `;
 
 const Logo = styled.h1`
+  color: var(--dark-gray);
   span {
     color: var(--medium-green);
   }
@@ -43,7 +44,7 @@ const Nav = styled.nav`
   }
 `;
 
-const ContactButton = styled.button`
+export const Button = styled.button`
   background: none;
   border: 1px solid var(--medium-green);
   color: var(--medium-green);
