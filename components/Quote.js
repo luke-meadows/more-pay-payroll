@@ -6,70 +6,87 @@ export default function Quote({ size }) {
   const initial = { salaries: 3, receipts: 5, invoices: 10 };
   const { inputs, handleChange } = useForm({ initial });
   return (
-    <StyledEstimate>
+    <StyledEstimate size={size}>
       <h3>Get a price estimate</h3>
-      <RangeSlider>
-        <div>{inputs.salaries}</div>
-        <input
-          name="salaries"
-          type="range"
-          onChange={handleChange}
-          value={inputs.salaries}
-          min={0}
-          max={100}
-        />
-      </RangeSlider>
-      <label htmlFor="salaries">Number of salaries per month</label>
-      <RangeSlider>
-        <div>{inputs.invoices}</div>
-        <input
-          name="invoices"
-          type="range"
-          onChange={handleChange}
-          value={inputs.invoices}
-          min={0}
-          max={100}
-        />
-      </RangeSlider>
-      <label htmlFor="invoices">
-        Number of customer / supplier invoices per month
-      </label>
-      <RangeSlider>
-        <div>{inputs.receipts}</div>
-        <input
-          name="receipts"
-          type="range"
-          onChange={handleChange}
-          value={inputs.receipts}
-          min={0}
-          max={100}
-        />
-      </RangeSlider>
-      <label htmlFor="receipts">Number of receipts per month</label>
-      <StyledButton>Get an estimate</StyledButton>
+      <SliderContainer size={size}>
+        <div>
+          <RangeSlider>
+            <div>{inputs.salaries}</div>
+            <input
+              name="salaries"
+              type="range"
+              onChange={handleChange}
+              value={inputs.salaries}
+              min={0}
+              max={100}
+            />
+          </RangeSlider>
+          <label htmlFor="salaries">Number of salaries per month</label>
+        </div>
+        <div>
+          <RangeSlider>
+            <div>{inputs.invoices}</div>
+            <input
+              name="invoices"
+              type="range"
+              onChange={handleChange}
+              value={inputs.invoices}
+              min={0}
+              max={100}
+            />
+          </RangeSlider>
+          <label htmlFor="invoices">
+            Number of customer / supplier invoices per month
+          </label>
+        </div>
+        <div>
+          <RangeSlider>
+            <div>{inputs.receipts}</div>
+            <input
+              name="receipts"
+              type="range"
+              onChange={handleChange}
+              value={inputs.receipts}
+              min={0}
+              max={100}
+            />
+          </RangeSlider>
+          <label htmlFor="receipts">Number of receipts per month</label>
+        </div>
+      </SliderContainer>
+
+      <StyledButton size={size}>Get an estimate</StyledButton>
     </StyledEstimate>
   );
 }
 
 const StyledEstimate = styled.div`
   border-radius: 1rem;
-  position: absolute;
+  position: ${(props) => (props.size === 'large' ? 'initial' : 'absolute')};
   right: 10rem;
   top: -10rem;
-  width: 40rem;
+  width: ${(props) => (props.size === 'large' ? '100%' : '40rem')};
   background: white;
-
   padding: 2rem 5rem 4rem 5rem;
-  box-shadow: var(--bs);
+  box-shadow: ${(props) => (props.size === 'large' ? 'none' : 'var(--bs)')};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h3 {
     font-size: 2.5rem;
+    text-align: ${(props) => (props.size === 'large' ? 'center' : 'left')};
+    margin-bottom: ${(props) => (props.size === 'large' ? '8rem' : '1rem')};
   }
   label {
     display: block;
     margin: 0rem 0 3rem 4.8rem;
   }
 `;
-
+const SliderContainer = styled.div`
+  display: ${(props) => (props.size === 'large' ? 'grid' : 'initial')};
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+`;
 export const RangeSlider = styled.div`
   display: flex;
   align-items: center;
@@ -122,5 +139,6 @@ export const RangeSlider = styled.div`
 `;
 
 const StyledButton = styled(Button)`
-  width: 100%;
+  width: ${(props) => (props.size === 'large' ? '' : '100%')};
+  text-align: center;
 `;

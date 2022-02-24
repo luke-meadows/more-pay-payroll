@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function DigitalPersonalAccounting() {
   return (
     <Section>
-      <Quote />
+      <Quote size="small" />
       <h3>Digital & personal accounting</h3>
       <p>
         At Bokoredo, you always get a dedicated accounting consultant who gives

@@ -13,6 +13,7 @@ export default function Home() {
       </Head>
       <Welcome />
       <DigitalPersonalAccounting />
+      <Quote size="large" />
     </>
   );
 }
