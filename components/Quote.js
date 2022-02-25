@@ -3,7 +3,7 @@ import useForm from '../lib/useForm';
 import { Button } from './Header';
 
 export default function Quote({ size }) {
-  const initial = { salaries: 3, receipts: 5, invoices: 10 };
+  const initial = { salaries: 3, receipts: 50, invoices: 20 };
   const { inputs, handleChange } = useForm({ initial });
   return (
     <StyledEstimate size={size}>
@@ -60,7 +60,7 @@ export default function Quote({ size }) {
               onChange={handleChange}
               value={inputs.receipts}
               min={0}
-              max={100}
+              max={200}
             />
           </RangeSlider>
           <label htmlFor="receipts">Number of receipts per month</label>
@@ -73,14 +73,16 @@ export default function Quote({ size }) {
 }
 
 const StyledEstimate = styled.div`
-  border: 1px solid blue;
   border-radius: 1rem;
   position: ${(props) => (props.size === 'large' ? 'initial' : 'absolute')};
-  right: 10rem;
+  right: var(--container-horizontal-padding);
   top: -10rem;
   width: ${(props) => (props.size === 'large' ? '100%' : '40rem')};
   background: white;
-  padding: 2rem 4rem 4rem 4rem;
+  padding: ${(props) =>
+    props.size === 'large'
+      ? '2rem var(--container-horizontal-padding) 8rem var(--container-horizontal-padding)'
+      : '2rem 4rem 4rem 4rem'};
   box-shadow: ${(props) => (props.size === 'large' ? 'none' : 'var(--bs)')};
   display: flex;
   flex-direction: column;
@@ -95,9 +97,9 @@ const StyledEstimate = styled.div`
     font-weight: 100;
   }
   p {
-    max-width: 85ch;
+    max-width: 100ch;
     text-align: center;
-    margin: 0rem 0 6rem 0;
+    margin: 0rem 0 4rem 0;
     line-height: 1.5;
   }
   label {
@@ -109,6 +111,8 @@ const SliderContainer = styled.div`
   display: ${(props) => (props.size === 'large' ? 'grid' : 'initial')};
   grid-template-columns: repeat(2, 1fr);
   column-gap: 5rem;
+  width: 100%;
+  padding: ${(props) => (props.size === 'large' ? '0 5rem 0 10rem' : '0')};
 `;
 export const RangeSlider = styled.div`
   display: flex;

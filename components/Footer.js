@@ -1,4 +1,58 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 export default function Footer() {
-  return <div>Footer</div>;
+  return (
+    <StyledFooter>
+      <Column>
+        <h4>Our services</h4>
+        <Link href="/">Accounting</Link>
+        <Link href="/">Financial Statements</Link>
+        <Link href="/">Payroll Administration</Link>
+        <Link href="/">Advice</Link>
+      </Column>
+      <Column>
+        <h4>Contact</h4>
+        <p>
+          <span>
+            <i className="icon-phone" />
+          </span>
+          +447 949 4428 44
+        </p>
+        <p>
+          <span>
+            <i className="icon-mail-alt" />
+          </span>
+          developedbyluke@gmail.com
+        </p>
+      </Column>
+    </StyledFooter>
+  );
 }
+
+const StyledFooter = styled.footer`
+  padding: 4rem 0;
+  background: var(--peach);
+  color: var(--dark-gray);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+`;
+
+const Column = styled.div`
+  width: fit-content;
+  padding: 0 10rem;
+  display: flex;
+  flex-direction: column;
+  h4,
+  p,
+  a {
+    margin: 0.5rem 0;
+  }
+  p,
+  a {
+    font-size: 1.8rem;
+  }
+  span {
+    margin-right: 1rem;
+  }
+`;

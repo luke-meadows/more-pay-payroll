@@ -1,35 +1,23 @@
 import styled from 'styled-components';
 import { Button } from './Header';
-export default function Welcome() {
+export default function Welcome({ bannerOptions }) {
   return (
     <WelcomeContainer>
-      <ImageContainer>
+      <ImageContainer img={bannerOptions.img}>
         <Overlay />
       </ImageContainer>
       <Content>
-        <h2>Welcome to a smarter accounting firm.</h2>
-        <p>
-          More Pay accounting firm offers modern solutions and personal service
-          at the market's lowest price. Our service suits all companies
-          providing:
-        </p>
+        <h2>{bannerOptions.title}</h2>
+        <p>{bannerOptions.subtitle}</p>
         <ServiceBlurbContainer>
-          <div>
-            <i className="demo-icon icon-ok-circled" />
-            <p>Authorized accounting consultants</p>
-          </div>
-          <div>
-            <i className="demo-icon icon-ok-circled" />
-            <p>Digital & simple accounting</p>
-          </div>
-          <div>
-            <i className="demo-icon icon-ok-circled" />
-            <p>No notice period</p>
-          </div>
-          <div>
-            <i className="demo-icon icon-ok-circled" />
-            <p>Price guarantee</p>
-          </div>
+          {bannerOptions.captions.map((caption) => {
+            return (
+              <div>
+                <i className="demo-icon icon-ok-circled" />
+                <p>{caption}</p>
+              </div>
+            );
+          })}
         </ServiceBlurbContainer>
         <DarkButton>Contact Us</DarkButton>
       </Content>
@@ -40,12 +28,11 @@ export default function Welcome() {
 const WelcomeContainer = styled.section`
   background-size: cover;
   background-position: center;
-  height: 50rem;
   position: relative;
 `;
 
 const ImageContainer = styled.div`
-  background-image: url('/imgs/welcome-img.jpg');
+  background-image: ${(props) => 'url(' + props.img + ')'};
   background-size: cover;
   background-position: center;
   height: 100%;

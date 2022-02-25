@@ -3,11 +3,13 @@ import styled from 'styled-components';
 export default function Header() {
   return (
     <StyledHeader>
-      <Logo>
-        More Pay<span>.</span>
-      </Logo>
+      <Link href="/">
+        <Logo>
+          More Pay<span>.</span>
+        </Logo>
+      </Link>
       <Nav>
-        <Link href="/">Accounting</Link>
+        <Link href="/accounting">Accounting</Link>
         <Link href="/">Financial statements</Link>
         <Link href="/">Payroll administration</Link>
         <Link href="/">Advice</Link>
@@ -29,6 +31,7 @@ const StyledHeader = styled.header`
 
 const Logo = styled.h1`
   color: var(--dark-gray);
+  cursor: pointer;
   span {
     color: var(--medium-green);
   }
@@ -52,6 +55,7 @@ export const Button = styled.button`
   font-family: 'Futura PT';
   font-size: 2rem;
   border-radius: 5rem;
+
   &:hover {
     cursor: pointer;
     border: 1px solid var(--green);

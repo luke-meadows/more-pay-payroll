@@ -31,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
     --light-peach: #FCFAF2;
     --pale-blue: #EEFAF6;
     --dark-gray: #3C3C3B;
-    --container-horizontal-padding:10rem;
+    --container-horizontal-padding:15rem;
     box-sizing: border-box;
     font-size: 10px;
   }
@@ -43,12 +43,13 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    line-height:1.2;
+
     color: var(--dark-gray);
   }
   a {
     text-decoration: none;
     color: var(---black);
+    cursor: pointer;
   }
   a:hover {
     text-decoration: underline;
@@ -60,8 +61,14 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Century Gothic';
     color: var(--dark-green);
   }
+  h3{
+    font-size: 3rem;
+  }
+  h4{
+    font-size: 2.5rem;
+  }
   p {
-  
+    line-height:1.5;
     font-size: 1.8rem;
     font-weight: 300;
   }

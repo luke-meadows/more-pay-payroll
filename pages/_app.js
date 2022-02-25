@@ -1,4 +1,3 @@
-import '../styles/globals.css';
 import '../public/fontello/css/fontello.css';
 import Page from '../components/Page';
 
