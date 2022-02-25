@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { containerVariant, elementVariant } from '../lib/animations';
 import { Button } from './Header';
 export default function Welcome({ bannerOptions }) {
   return (
@@ -6,26 +8,26 @@ export default function Welcome({ bannerOptions }) {
       <ImageContainer img={bannerOptions.img}>
         <Overlay />
       </ImageContainer>
-      <Content>
-        <h2>{bannerOptions.title}</h2>
-        <p>{bannerOptions.subtitle}</p>
-        <ServiceBlurbContainer>
+      <Content variants={containerVariant} initial="hidden" animate="show">
+        <motion.h2 variants={elementVariant}>{bannerOptions.title}</motion.h2>
+        <motion.p variants={elementVariant}>{bannerOptions.subtitle}</motion.p>
+        <ServiceBlurbContainer variants={elementVariant}>
           {bannerOptions.captions.map((caption) => {
             return (
-              <div>
+              <div key={caption}>
                 <i className="demo-icon icon-ok-circled" />
-                <p>{caption}</p>
+                <p>{caption}</p>1
               </div>
             );
           })}
         </ServiceBlurbContainer>
-        <DarkButton>Contact Us</DarkButton>
+        <DarkButton variants={elementVariant}>Contact Us</DarkButton>
       </Content>
     </WelcomeContainer>
   );
 }
 
-const WelcomeContainer = styled.section`
+const WelcomeContainer = styled(motion.section)`
   background-size: cover;
   background-position: center;
   position: relative;
@@ -51,7 +53,7 @@ const Overlay = styled.div`
   z-index: 1;
 `;
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   z-index: 2;
   padding: 5rem var(--container-horizontal-padding);
   width: 65%;
@@ -64,7 +66,7 @@ const Content = styled.div`
   }
 `;
 
-const ServiceBlurbContainer = styled.div`
+const ServiceBlurbContainer = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 3rem 0;

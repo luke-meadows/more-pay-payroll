@@ -1,5 +1,6 @@
-import Link from 'next/link';
+import Link from '../components/NoScrollLink';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 export default function Header() {
   return (
     <StyledHeader>
@@ -19,6 +20,7 @@ export default function Header() {
 }
 
 const StyledHeader = styled.header`
+  z-index: 2;
   padding: 0 var(--container-horizontal-padding);
   height: 9rem;
   font-family: 'Century Gothic';
@@ -26,6 +28,10 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: white;
 `;
 
 const Logo = styled.h1`
@@ -46,7 +52,7 @@ const Nav = styled.nav`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   background: none;
   border: 1px solid var(--medium-green);
   color: var(--medium-green);

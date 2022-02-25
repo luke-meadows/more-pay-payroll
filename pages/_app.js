@@ -1,11 +1,25 @@
 import '../public/fontello/css/fontello.css';
-import Page from '../components/Page';
 
-function MyApp({ Component, pageProps }) {
+import { AnimatePresence } from 'framer-motion';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { GlobalStyles } from '../styles/GlobalStyles';
+
+function MyApp({ Component, pageProps, router }) {
+  const url = `http://localhost:3000/${router.route}`;
   return (
-    <Page>
-      <Component {...pageProps} />
-    </Page>
+    <>
+      <GlobalStyles />
+      <Header />
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} canonical={url} key={url} />
+      </AnimatePresence>
+      <Footer />
+    </>
   );
 }
 

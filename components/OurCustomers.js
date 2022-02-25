@@ -69,7 +69,7 @@ export default function OurCustomers() {
             tempore beatae incidunt aspernatur nihil blanditiis omnis nisi ipsam
             sit nulla facere quibusdam."
           </p>
-          <h5>John Doe, AAB DD Distribution</h5>
+          <h5>John Doe, DD Distribution</h5>
         </Card>
       </CardsContainer>
     </Section>
