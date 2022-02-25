@@ -23,7 +23,7 @@ export default function Welcome({ bannerOptions }) {
             return (
               <div key={caption}>
                 <i className="demo-icon icon-ok-circled" />
-                <p>{caption}</p>1
+                <p>{caption}</p>
               </div>
             );
           })}
