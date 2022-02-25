@@ -31,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
     --light-peach: #FCFAF2;
     --pale-blue: #EEFAF6;
     --dark-gray: #3C3C3B;
-    --container-horizontal-padding:15rem;
+    --container-horizontal-padding:18rem;
     box-sizing: border-box;
     font-size: 10px;
   }

@@ -10,9 +10,8 @@ export default function Header() {
       </Link>
       <Nav>
         <Link href="/accounting">Accounting</Link>
-        <Link href="/">Financial statements</Link>
-        <Link href="/">Payroll administration</Link>
-        <Link href="/">Advice</Link>
+        <Link href="/financial-statements">Financial statements</Link>
+        <Link href="/payroll-administration">Payroll administration</Link>
       </Nav>
       <Button>Contact Us</Button>
     </StyledHeader>
