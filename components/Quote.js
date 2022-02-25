@@ -8,9 +8,21 @@ export default function Quote({ size }) {
   return (
     <StyledEstimate size={size}>
       <h3>Get a price estimate</h3>
+      {size === 'large' && (
+        <>
+          <h4>Does that sound incredible? Test us</h4>
+          <p>
+            Each company is unique but some things are common to most companies.
+            Therefore, we can give a good price estimate for what our services
+            would cost your company if you fill in the information below. We
+            will return with a price within 24 hours, and we promise you will
+            like it!
+          </p>
+        </>
+      )}
       <SliderContainer size={size}>
         <div>
-          <RangeSlider>
+          <RangeSlider size={size}>
             <div>{inputs.salaries}</div>
             <input
               name="salaries"
@@ -24,7 +36,7 @@ export default function Quote({ size }) {
           <label htmlFor="salaries">Number of salaries per month</label>
         </div>
         <div>
-          <RangeSlider>
+          <RangeSlider size={size}>
             <div>{inputs.invoices}</div>
             <input
               name="invoices"
@@ -40,7 +52,7 @@ export default function Quote({ size }) {
           </label>
         </div>
         <div>
-          <RangeSlider>
+          <RangeSlider size={size}>
             <div>{inputs.receipts}</div>
             <input
               name="receipts"
@@ -61,21 +73,32 @@ export default function Quote({ size }) {
 }
 
 const StyledEstimate = styled.div`
+  border: 1px solid blue;
   border-radius: 1rem;
   position: ${(props) => (props.size === 'large' ? 'initial' : 'absolute')};
   right: 10rem;
   top: -10rem;
   width: ${(props) => (props.size === 'large' ? '100%' : '40rem')};
   background: white;
-  padding: 2rem 5rem 4rem 5rem;
+  padding: 2rem 4rem 4rem 4rem;
   box-shadow: ${(props) => (props.size === 'large' ? 'none' : 'var(--bs)')};
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: ${(props) => (props.size === 'large' ? 'center' : 'none')};
   h3 {
-    font-size: 2.5rem;
+    font-size: ${(props) => (props.size === 'large' ? '3rem' : '2.5rem')};
     text-align: ${(props) => (props.size === 'large' ? 'center' : 'left')};
-    margin-bottom: ${(props) => (props.size === 'large' ? '8rem' : '1rem')};
+    margin-bottom: ${(props) => (props.size === 'large' ? '0' : '2rem')};
+  }
+  h4 {
+    font-size: 1.8rem;
+    font-weight: 100;
+  }
+  p {
+    max-width: 85ch;
+    text-align: center;
+    margin: 0rem 0 6rem 0;
+    line-height: 1.5;
   }
   label {
     display: block;
@@ -94,14 +117,14 @@ export const RangeSlider = styled.div`
     min-width: 3rem;
     font-size: 2.2rem;
     margin-right: 1rem;
-
     text-align: left;
   }
 
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     input[type='range'] {
       overflow: hidden;
-      width: 40rem;
+      width: ${(props) => (props.size === 'large' ? '40rem' : '100%')};
+
       -webkit-appearance: none;
       background-color: rgba(0, 0, 0, 0.3);
     }
