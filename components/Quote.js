@@ -1,26 +1,38 @@
 import styled from 'styled-components';
 import useForm from '../lib/useForm';
 import { Button } from './Header';
+import { motion } from 'framer-motion';
+import { containerVariant, elementVariant } from '../lib/animations';
+import useScroll from '../lib/useScroll';
 
 export default function Quote({ size }) {
+  const [element, controls] = useScroll();
   const initial = { salaries: 3, receipts: 50, invoices: 20 };
   const { inputs, handleChange } = useForm({ initial });
   return (
-    <StyledEstimate size={size}>
-      <h3>Get a price estimate</h3>
+    <StyledEstimate
+      variants={containerVariant}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+      size={size}
+    >
+      <motion.h3 variants={elementVariant}>Get a price estimate</motion.h3>
       {size === 'large' && (
         <>
-          <h4>Does that sound incredible? Test us</h4>
-          <p>
+          <motion.h4 variants={elementVariant}>
+            Does that sound incredible? Test us
+          </motion.h4>
+          <motion.p variants={elementVariant}>
             Each company is unique but some things are common to most companies.
             Therefore, we can give a good price estimate for what our services
             would cost your company if you fill in the information below. We
             will return with a price within 24 hours, and we promise you will
             like it!
-          </p>
+          </motion.p>
         </>
       )}
-      <SliderContainer size={size}>
+      <SliderContainer variants={elementVariant} size={size}>
         <div>
           <RangeSlider size={size}>
             <div>{inputs.salaries}</div>
@@ -67,12 +79,14 @@ export default function Quote({ size }) {
         </div>
       </SliderContainer>
 
-      <StyledButton size={size}>Get an estimate</StyledButton>
+      <StyledButton variants={elementVariant} size={size}>
+        Get an estimate
+      </StyledButton>
     </StyledEstimate>
   );
 }
 
-const StyledEstimate = styled.div`
+const StyledEstimate = styled(motion.div)`
   border-radius: 1rem;
   position: ${(props) => (props.size === 'large' ? 'initial' : 'absolute')};
   right: var(--container-horizontal-padding);
@@ -107,7 +121,7 @@ const StyledEstimate = styled.div`
     margin: 0rem 0 3rem 4.8rem;
   }
 `;
-const SliderContainer = styled.div`
+const SliderContainer = styled(motion.div)`
   display: ${(props) => (props.size === 'large' ? 'grid' : 'initial')};
   grid-template-columns: repeat(2, 1fr);
   column-gap: 5rem;

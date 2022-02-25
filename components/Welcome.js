@@ -1,14 +1,21 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { containerVariant, elementVariant } from '../lib/animations';
+import useScroll from '../lib/useScroll';
 import { Button } from './Header';
 export default function Welcome({ bannerOptions }) {
+  const [element, controls] = useScroll();
   return (
     <WelcomeContainer>
       <ImageContainer img={bannerOptions.img}>
         <Overlay />
       </ImageContainer>
-      <Content variants={containerVariant} initial="hidden" animate="show">
+      <Content
+        variants={containerVariant}
+        ref={element}
+        animate={controls}
+        initial="hidden"
+      >
         <motion.h2 variants={elementVariant}>{bannerOptions.title}</motion.h2>
         <motion.p variants={elementVariant}>{bannerOptions.subtitle}</motion.p>
         <ServiceBlurbContainer variants={elementVariant}>

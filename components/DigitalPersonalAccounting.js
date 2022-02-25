@@ -3,26 +3,47 @@ import PhoneImg from '../public/imgs/phone-img.jpg';
 import MeetingImg from '../public/imgs/meeting-img.jpg';
 import Quote from '../components/Quote';
 import Image from 'next/image';
+import useScroll from '../lib/useScroll';
+import { motion } from 'framer-motion';
+import { containerVariant, elementVariant } from '../lib/animations';
+
 export default function DigitalPersonalAccounting() {
+  const [element, controls] = useScroll(0.6);
+  const [element2, controls2] = useScroll(0.5);
+
   return (
     <Section>
-      <Quote size="small" />
-      <h3>Digital & personal accounting</h3>
-      <p>
-        At Bokoredo, you always get a dedicated accounting consultant who gives
-        you personal service in combination with smart technical solutions. This
-        way, you do not have to choose between a digital service and personal
-        contact; with us you get both parts. In our ongoing service, you not
-        only get the right number declared to the Swedish Tax Agency on the
-        right day, but also a knowledgeable accounting consultant to answer
-        questions with. No matter how you look at your company's accounts, we
-        are sure to have a solution for you. Of course completely digital, with
-        flexible systems that suit you and with a high level of personal service
-        at a low price.
-      </p>
-      <CardContainer>
+      <motion.div
+        variants={containerVariant}
+        ref={element}
+        animate={controls}
+        initial="hidden"
+      >
+        <Quote size="small" />
+        <motion.h3 variants={elementVariant}>
+          Digital & personal accounting
+        </motion.h3>
+        <motion.p variants={elementVariant}>
+          At Bokoredo, you always get a dedicated accounting consultant who
+          gives you personal service in combination with smart technical
+          solutions. This way, you do not have to choose between a digital
+          service and personal contact; with us you get both parts. In our
+          ongoing service, you not only get the right number declared to the
+          Swedish Tax Agency on the right day, but also a knowledgeable
+          accounting consultant to answer questions with. No matter how you look
+          at your company's accounts, we are sure to have a solution for you. Of
+          course completely digital, with flexible systems that suit you and
+          with a high level of personal service at a low price.
+        </motion.p>
+      </motion.div>
+      <CardContainer
+        variants={containerVariant}
+        ref={element2}
+        animate={controls2}
+        initial="hidden"
+      >
         <OuterCard backgroundColor="var(--blue)">
-          <Card>
+          <Card variants={elementVariant}>
             <div className="img-container">
               <Image layout="responsive" objectFit="cover" src={PhoneImg} />
             </div>
@@ -38,7 +59,7 @@ export default function DigitalPersonalAccounting() {
           </Card>
         </OuterCard>
         <OuterCard backgroundColor="var(--peach)">
-          <Card>
+          <Card variants={elementVariant}>
             <div className="img-container">
               <Image layout="responsive" objectFit="cover" src={MeetingImg} />
             </div>
@@ -59,7 +80,7 @@ export default function DigitalPersonalAccounting() {
   );
 }
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   padding: 6rem var(--container-horizontal-padding);
   position: relative;
   h3 {
@@ -71,7 +92,7 @@ const Section = styled.section`
   }
 `;
 
-const CardContainer = styled.div`
+const CardContainer = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   margin-top: 10rem;
@@ -86,7 +107,7 @@ const OuterCard = styled.div`
   }
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   padding: 5rem;
   text-align: center;
   display: flex;

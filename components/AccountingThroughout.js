@@ -1,15 +1,28 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { containerVariant, elementVariant } from '../lib/animations';
+import useScroll from '../lib/useScroll';
 import Together from '../public/imgs/together.jpg';
 import { Button } from './Header';
 
 export default function AccountingThroughout() {
+  const [element, controls] = useScroll();
   return (
-    <Section>
+    <Section
+      variants={containerVariant}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
       <Content>
-        <h3>Accounting throughout the UK</h3>
-        <h4>Simple bookkeeping and accounting at the UK's lowest price</h4>
-        <p>
+        <motion.h3 variants={elementVariant}>
+          Accounting throughout the UK
+        </motion.h3>
+        <motion.h4 variants={elementVariant}>
+          Simple bookkeeping and accounting at the UK's lowest price
+        </motion.h4>
+        <motion.p variants={elementVariant}>
           Bokoredo accounting firm was started in Stockholm in 2013 because we
           thought the cost of current accounting and accounting was too
           expensive for small and medium-sized companies. Even with a limited
@@ -19,8 +32,8 @@ export default function AccountingThroughout() {
           bookkeeping but at a low price. One step in this was to digitize the
           current accounting so that we could use our time for smarter things.
           Like giving really good advice and a personal service.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p variants={elementVariant}>
           Our digital accounting services have also made it possible to help
           customers from all over the country. So it actually does not matter if
           you are from Stockholm, Gothenburg, Malmö or Finspång; our accounting
@@ -31,24 +44,24 @@ export default function AccountingThroughout() {
           is like any qualified accounting firm. Except that we are a little
           smarter, a little smoother and above all a little cheaper. Welcome to
           a smarter accounting firm!
-        </p>
-        <Button>Read more about us</Button>
+        </motion.p>
+        <Button variants={elementVariant}>Read more about us</Button>
       </Content>
-      <ImageContainer>
+      <ImageContainer variants={elementVariant}>
         <Image src={Together} layout="responsive" objectFit="cover" />
       </ImageContainer>
     </Section>
   );
 }
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   padding: 6rem var(--container-horizontal-padding);
   display: flex;
   align-items: center;
   background: var(--light-peach);
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   width: 100%;
 
   img {

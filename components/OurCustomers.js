@@ -5,13 +5,30 @@ import Bike from '../public/imgs/bike.jpg';
 import Calculator from '../public/imgs/calculator.jpg';
 import Sea from '../public/imgs/sea.jpg';
 import Shoes from '../public/imgs/shoes.jpg';
+import { motion } from 'framer-motion';
+import { containerVariant, elementVariant } from '../lib/animations';
+import useScroll from '../lib/useScroll';
 export default function OurCustomers() {
+  const [element, controls] = useScroll(0.1);
+  const [element2, controls2] = useScroll(0.2);
   return (
-    <Section>
-      <h3>Our customers</h3>
-      <Link href="/">See more customer references</Link>
-      <CardsContainer>
-        <Card>
+    <Section
+      variants={containerVariant}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
+      <motion.h3 variants={elementVariant}>Our customers</motion.h3>
+      <motion.div variants={elementVariant}>
+        <Link href="/">See more customer references</Link>
+      </motion.div>
+      <CardsContainer
+        variants={containerVariant}
+        ref={element2}
+        animate={controls2}
+        initial="hidden"
+      >
+        <Card variants={elementVariant}>
           <ImageContainer>
             <Image src={Bike} />
             <p className="text">Ellen&apos;s Cycles</p>
@@ -26,7 +43,7 @@ export default function OurCustomers() {
           </p>
           <h5>John Doe, Ellen&apos;s Cycles</h5>
         </Card>
-        <Card>
+        <Card variants={elementVariant}>
           <ImageContainer>
             <Image src={Calculator} />
             <p className="text">AAB Accounting</p>
@@ -41,7 +58,7 @@ export default function OurCustomers() {
           </p>
           <h5>John Doe, AAB Accounting</h5>
         </Card>
-        <Card>
+        <Card variants={elementVariant}>
           <ImageContainer>
             <Image src={Sea} />
             <p className="text">Marine Cooperation</p>
@@ -56,7 +73,7 @@ export default function OurCustomers() {
           </p>
           <h5>John Doe, Marine Cooperation</h5>
         </Card>
-        <Card>
+        <Card variants={elementVariant}>
           <ImageContainer>
             <Image layout="responsive" src={Shoes} />
             <p className="text">DD Distribution</p>
@@ -76,7 +93,7 @@ export default function OurCustomers() {
   );
 }
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   background: var(--light-peach);
   padding: 4rem var(--container-horizontal-padding);
   display: flex;
@@ -88,14 +105,14 @@ const Section = styled.section`
   }
 `;
 
-const CardsContainer = styled.div`
+const CardsContainer = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 6rem;
   margin-top: 8rem;
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
