@@ -47,7 +47,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
 
-    /* color: var(--dark-gray); */
+    color: var(--dark-gray);
   }
   a {
     text-decoration: none;

@@ -15,7 +15,7 @@ export default function GetStarted() {
   const [element5, controls5] = useScroll();
 
   return (
-    <Section>
+    <AltImageSection>
       <motion.div
         variants={containerVariant}
         ref={element}
@@ -30,14 +30,14 @@ export default function GetStarted() {
           online and completely digitally!
         </motion.p>
       </motion.div>
-      <CardContainer>
+      <AltCardContainer>
         <motion.div
           variants={containerVariant}
           ref={element2}
           animate={controls2}
           initial="hidden"
         >
-          <Card variants={elementVariant}>
+          <AltCard variants={elementVariant}>
             <ImageContainer>
               <Image src={YourWay} layout="responsive" objectFit="cover" />
             </ImageContainer>
@@ -58,7 +58,7 @@ export default function GetStarted() {
                 easier!
               </p>
             </Text>
-          </Card>
+          </AltCard>
         </motion.div>
         <motion.div
           variants={containerVariant}
@@ -66,7 +66,7 @@ export default function GetStarted() {
           animate={controls3}
           initial="hidden"
         >
-          <Card variants={elementVariant}>
+          <AltCard variants={elementVariant}>
             <Text>
               <p>02.</p>
               <h4>Has your own accounting consultant</h4>
@@ -87,7 +87,7 @@ export default function GetStarted() {
             <ImageContainer>
               <Image src={Consultant} layout="responsive" objectFit="cover" />
             </ImageContainer>
-          </Card>
+          </AltCard>
         </motion.div>
         <motion.div
           variants={containerVariant}
@@ -95,7 +95,7 @@ export default function GetStarted() {
           animate={controls4}
           initial="hidden"
         >
-          <Card variants={elementVariant}>
+          <AltCard variants={elementVariant}>
             <ImageContainer>
               <Image src={Numbers} layout="responsive" objectFit="cover" />
             </ImageContainer>
@@ -117,7 +117,7 @@ export default function GetStarted() {
                 it), and how much is to be paid in taxes and VAT.
               </p>
             </Text>
-          </Card>
+          </AltCard>
         </motion.div>
         <motion.div
           variants={containerVariant}
@@ -125,7 +125,7 @@ export default function GetStarted() {
           animate={controls5}
           initial="hidden"
         >
-          <Card variants={elementVariant}>
+          <AltCard variants={elementVariant}>
             <Text>
               <p>04.</p>
               <h4>And work wherever you want</h4>
@@ -144,31 +144,34 @@ export default function GetStarted() {
             <ImageContainer>
               <Image src={WorkWherever} layout="responsive" objectFit="cover" />
             </ImageContainer>
-          </Card>
+          </AltCard>
         </motion.div>
-      </CardContainer>
-    </Section>
+      </AltCardContainer>
+    </AltImageSection>
   );
 }
 
-const Section = styled(motion.section)`
+export const AltImageSection = styled(motion.section)`
   text-align: center;
   padding: 0rem var(--container-horizontal-padding) 10rem
     var(--container-horizontal-padding);
 `;
 
-const CardContainer = styled.div`
+export const AltCardContainer = styled.div`
   margin-top: 10rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   row-gap: 10rem;
 `;
-const Card = styled(motion.div)`
+export const AltCard = styled(motion.div)`
   display: flex;
   justify-content: space-between;
 `;
 const ImageContainer = styled.div`
   width: 46%;
+  img {
+    border-radius: 0.3rem;
+  }
 `;
 const Text = styled.div`
   width: 46%;

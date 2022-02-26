@@ -55,7 +55,7 @@ export default function WeTakeCareOfEverything() {
             <i className="icon-ok-circled" /> <p> Graphic reports</p>
           </div>
           <div>
-            <i className="icon-ok-circled" />{' '}
+            <i className="icon-ok-circled" />
             <p> VAT management inside and outside the EU</p>
           </div>
           <div>
