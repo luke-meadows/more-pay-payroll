@@ -1,54 +1,75 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { containerVariant, elementVariant } from '../lib/animations';
+import useScroll from '../lib/useScroll';
 export default function FinancialStatements() {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <Section>
-      <h3>Financial statements - This is included for you as a customer</h3>
-      <p>
-        When it's time for the annual year-end work, we first like to sit down
-        with our customers and go through this year's events. We care about
-        having a personal relationship with you as a customer and a
-        reconciliation at the end of the year gives us the same picture of how
-        the year-end work should be done for the past financial year.
-      </p>
-      <h6>We offer:</h6>
-      <p>
-        <span>
-          <i className="icon-ok-circled"></i>
-        </span>
-        Annual report
-      </p>
-      <p>
-        <span>
-          <i className="icon-ok-circled"></i>
-        </span>
-        Annual reconciliation
-      </p>
-      <p>
-        <span>
-          <i className="icon-ok-circled"></i>
-        </span>
-        Year-end transactions
-      </p>
-      <p>
-        <span>
-          <i className="icon-ok-circled"></i>
-        </span>
-        Accruals
-      </p>
-      <p>
-        <span>
-          <i className="icon-ok-circled"></i>
-        </span>
-        Depreciation
-      </p>
-      <p>
-        <span>
-          <i className="icon-ok-circled"></i>
-        </span>
-        Year-end appropriations
-      </p>
-      <div>
-        <p>
+      <motion.div
+        variants={containerVariant}
+        ref={element}
+        animate={controls}
+        initial="hidden"
+      >
+        <motion.h3 variants={elementVariant}>
+          Financial statements - This is included for you as a customer
+        </motion.h3>
+        <motion.p variants={elementVariant}>
+          When it's time for the annual year-end work, we first like to sit down
+          with our customers and go through this year's events. We care about
+          having a personal relationship with you as a customer and a
+          reconciliation at the end of the year gives us the same picture of how
+          the year-end work should be done for the past financial year.
+        </motion.p>
+        <motion.h6 variants={elementVariant}>We offer:</motion.h6>
+        <motion.div variants={elementVariant}>
+          <p>
+            <span>
+              <i className="icon-ok-circled"></i>
+            </span>
+            Annual report
+          </p>
+          <p>
+            <span>
+              <i className="icon-ok-circled"></i>
+            </span>
+            Annual reconciliation
+          </p>
+          <p>
+            <span>
+              <i className="icon-ok-circled"></i>
+            </span>
+            Year-end transactions
+          </p>
+          <p>
+            <span>
+              <i className="icon-ok-circled"></i>
+            </span>
+            Accruals
+          </p>
+          <p>
+            <span>
+              <i className="icon-ok-circled"></i>
+            </span>
+            Depreciation
+          </p>
+          <p>
+            <span>
+              <i className="icon-ok-circled"></i>
+            </span>
+            Year-end appropriations
+          </p>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        variants={containerVariant}
+        ref={element2}
+        animate={controls2}
+        initial="hidden"
+      >
+        <motion.p variants={elementVariant}>
           The result of the year-end work, the annual report, is the summary
           report on how the business has proceeded during the past financial
           year. By law, all limited companies must prepare an annual report each
@@ -65,8 +86,8 @@ export default function FinancialStatements() {
           distributed to the company's owners, and special tax advice is needed
           in connection with the year-end financial statements, Bokoredo also
           assists with this.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p variants={elementVariant}>
           A well-prepared and elaborated annual report is a requirement for an
           authorized public accountant to approve it. If the accounting and the
           annual report are to be audited, that is. If the company is small
@@ -77,16 +98,16 @@ export default function FinancialStatements() {
           your company. If an audit is required due to the company's size,
           Bokoredo also has good contacts with auditing firms and handles all
           necessary dialogue with the auditor.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p variants={elementVariant}>
           All in all, it can be said that the year-end work means that the
           current accounting is checked, and smart adjustments are made to
           create a more accurate picture of the company's past years. When all
           work with the annual accounts has been completed and the annual report
           has been signed, Bokoredo finally handles all reporting toThe Swedish
           Tax Agency. It could not be easier.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </Section>
   );
 }

@@ -9,6 +9,10 @@ export default function Quote({ size }) {
   const [element, controls] = useScroll();
   const initial = { salaries: 3, receipts: 50, invoices: 20 };
   const { inputs, handleChange } = useForm({ initial });
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(inputs);
+  }
   return (
     <StyledEstimate
       variants={containerVariant}
@@ -32,56 +36,58 @@ export default function Quote({ size }) {
           </motion.p>
         </>
       )}
-      <SliderContainer variants={elementVariant} size={size}>
-        <div>
-          <RangeSlider size={size}>
-            <div>{inputs.salaries}</div>
-            <input
-              name="salaries"
-              type="range"
-              onChange={handleChange}
-              value={inputs.salaries}
-              min={0}
-              max={99}
-            />
-          </RangeSlider>
-          <label htmlFor="salaries">Number of salaries per month</label>
-        </div>
-        <div>
-          <RangeSlider size={size}>
-            <div>{inputs.invoices}</div>
-            <input
-              name="invoices"
-              type="range"
-              onChange={handleChange}
-              value={inputs.invoices}
-              min={0}
-              max={99}
-            />
-          </RangeSlider>
-          <label htmlFor="invoices">
-            Number of customer / supplier invoices per month
-          </label>
-        </div>
-        <div>
-          <RangeSlider size={size}>
-            <div>{inputs.receipts}</div>
-            <input
-              name="receipts"
-              type="range"
-              onChange={handleChange}
-              value={inputs.receipts}
-              min={0}
-              max={99}
-            />
-          </RangeSlider>
-          <label htmlFor="receipts">Number of receipts per month</label>
-        </div>
-      </SliderContainer>
+      <form onSubmit={handleSubmit}>
+        <SliderContainer variants={elementVariant} size={size}>
+          <div>
+            <RangeSlider size={size}>
+              <div>{inputs.salaries}</div>
+              <input
+                name="salaries"
+                type="range"
+                onChange={handleChange}
+                value={inputs.salaries}
+                min={0}
+                max={99}
+              />
+            </RangeSlider>
+            <label htmlFor="salaries">Number of salaries per month</label>
+          </div>
+          <div>
+            <RangeSlider size={size}>
+              <div>{inputs.invoices}</div>
+              <input
+                name="invoices"
+                type="range"
+                onChange={handleChange}
+                value={inputs.invoices}
+                min={0}
+                max={99}
+              />
+            </RangeSlider>
+            <label htmlFor="invoices">
+              Number of customer / supplier invoices per month
+            </label>
+          </div>
+          <div>
+            <RangeSlider size={size}>
+              <div>{inputs.receipts}</div>
+              <input
+                name="receipts"
+                type="range"
+                onChange={handleChange}
+                value={inputs.receipts}
+                min={0}
+                max={99}
+              />
+            </RangeSlider>
+            <label htmlFor="receipts">Number of receipts per month</label>
+          </div>
+        </SliderContainer>
 
-      <StyledButton variants={elementVariant} size={size}>
-        Get an estimate
-      </StyledButton>
+        <StyledButton type="submit" variants={elementVariant} size={size}>
+          Get an estimate
+        </StyledButton>
+      </form>
     </StyledEstimate>
   );
 }
@@ -119,6 +125,11 @@ const StyledEstimate = styled(motion.div)`
   label {
     display: block;
     margin: 0rem 0 3rem 4.8rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: ${(props) => (props.size === 'large' ? 'center' : 'none')};
   }
 `;
 const SliderContainer = styled(motion.div)`

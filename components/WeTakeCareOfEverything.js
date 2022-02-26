@@ -4,7 +4,7 @@ import { containerVariant, elementVariant } from '../lib/animations';
 import useScroll from '../lib/useScroll';
 export default function WeTakeCareOfEverything() {
   const [element, controls] = useScroll();
-  const [element2, controls2] = useScroll();
+  const [element2, controls2] = useScroll(0.2);
   return (
     <Section>
       <motion.div
@@ -108,13 +108,6 @@ export default function WeTakeCareOfEverything() {
           support. For customers who want help sending out invoice reminders,
           Bokoredo is happy to help with that as well. And you, if you want, we
           will of course also handle the payments for you.
-        </motion.p>
-        <motion.p variants={elementVariant}>
-          Ps. It is also worth mentioning that digital accounting is green
-          accounting. By avoiding deforestation and environmentally impacting
-          emissions from printers, we can also save resources in the form of
-          money, which also benefits our customers. Unlike many other agencies,
-          our environmental work leads to reduced costs for our customers.
         </motion.p>
       </motion.div>
     </Section>

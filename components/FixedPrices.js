@@ -1,20 +1,29 @@
 import styled from 'styled-components';
 import { Button } from './Header';
+import { motion } from 'framer-motion';
+import { containerVariant, elementVariant } from '../lib/animations';
+import useScroll from '../lib/useScroll';
 export default function FixedPrices() {
+  const [element, controls] = useScroll();
   return (
-    <Section>
-      <h3>We work with fixed prices</h3>
-      <p>
+    <Section
+      variants={containerVariant}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
+      <motion.h3 variants={elementVariant}>We work with fixed prices</motion.h3>
+      <motion.p variants={elementVariant}>
         We have decent and transparent prices for our year-end work. That way,
         you always know what it will cost you as a customer. We have divided our
         year-end offer into different packages, depending on how large a company
         you have. The packages are from Small to Extra Large. If you are not a
         customer with us with your current accounting, we can still help you
         according to capacity, contact us for more information.
-      </p>
+      </motion.p>
 
       <CardContainer>
-        <Card>
+        <Card variants={elementVariant}>
           <h5>Financial statements Small</h5>
           <div>
             <ul>
@@ -36,7 +45,7 @@ export default function FixedPrices() {
           <CardButton>I am interested</CardButton>
         </Card>
 
-        <Card>
+        <Card variants={elementVariant}>
           <h5>Financial statements Medium</h5>
           <div>
             <ul>
@@ -57,7 +66,7 @@ export default function FixedPrices() {
           </Price>
           <CardButton>I am interested</CardButton>
         </Card>
-        <Card>
+        <Card variants={elementVariant}>
           <h5>Financial statements Large</h5>
           <div>
             <ul>
@@ -78,7 +87,7 @@ export default function FixedPrices() {
           </Price>
           <CardButton>I am interested</CardButton>
         </Card>
-        <Card>
+        <Card variants={elementVariant}>
           <h5>Financial statements XL</h5>
           <div>
             <ul>
@@ -97,7 +106,7 @@ export default function FixedPrices() {
           </Price>
           <CardButton>I am interested</CardButton>
         </Card>
-        <Card>
+        <Card variants={elementVariant}>
           <h5>Individual company</h5>
           <div>
             <ul>
@@ -121,7 +130,7 @@ export default function FixedPrices() {
   );
 }
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   padding: 6rem var(--container-horizontal-padding);
 `;
 
@@ -132,7 +141,7 @@ const CardContainer = styled.div`
   row-gap: 5rem;
   margin-top: 6rem;
 `;
-const Card = styled.div`
+const Card = styled(motion.div)`
   border-radius: 0.3rem;
   box-shadow: var(--bs);
   padding-bottom: 4rem;

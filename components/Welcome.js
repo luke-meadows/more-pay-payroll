@@ -38,6 +38,7 @@ const WelcomeContainer = styled(motion.section)`
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
 `;
 
 const ImageContainer = styled.div`
