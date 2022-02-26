@@ -23,7 +23,7 @@ export default function AccountingThroughout() {
           Simple bookkeeping and accounting at the UK's lowest price
         </motion.h4>
         <motion.p variants={elementVariant}>
-          Bokoredo accounting firm was started in Stockholm in 2013 because we
+          Your Pay accounting firm was started in Stockholm in 2013 because we
           thought the cost of current accounting and accounting was too
           expensive for small and medium-sized companies. Even with a limited
           amount of vouchers and employees, accounting costs were often several
@@ -38,9 +38,9 @@ export default function AccountingThroughout() {
           customers from all over the country. So it actually does not matter if
           you are from Stockholm, Gothenburg, Malmö or Finspång; our accounting
           works just as well wherever in Sweden you are. In addition to current
-          accounting, Bokoredo also offers financial statements, income tax
+          accounting, Your Pay also offers financial statements, income tax
           returns, annual reports, tax advice, payroll administration and
-          qualified advice on business finance issues. In other words, Bokoredo
+          qualified advice on business finance issues. In other words, Your Pay
           is like any qualified accounting firm. Except that we are a little
           smarter, a little smoother and above all a little cheaper. Welcome to
           a smarter accounting firm!

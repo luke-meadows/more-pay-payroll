@@ -73,8 +73,8 @@ export default function FinancialStatements() {
           The result of the year-end work, the annual report, is the summary
           report on how the business has proceeded during the past financial
           year. By law, all limited companies must prepare an annual report each
-          year and submit it toThe Swedish Companies Registration Office.
-          Bokoredo will of course help you with that work. Thanks to this year's
+          year and submit it toThe Swedish Companies Registration Office. Your
+          Pay will of course help you with that work. Thanks to this year's
           accounting, the books are already in good condition when we start. But
           there is still a lot of work to be done with the annual report. For
           example, there are probably some year-end transactions that should be
@@ -84,7 +84,7 @@ export default function FinancialStatements() {
           placed in an accrual fund to reduce the tax for the year? Thanks to
           the year-end work, it is determined how much money should be
           distributed to the company's owners, and special tax advice is needed
-          in connection with the year-end financial statements, Bokoredo also
+          in connection with the year-end financial statements, Your Pay also
           assists with this.
         </motion.p>
         <motion.p variants={elementVariant}>
@@ -95,8 +95,8 @@ export default function FinancialStatements() {
           a couple of years. If you can therefore opt out of an auditor due to
           the company's size, it is often a good idea that saves many thousands
           of kroner. Of course, we also help with this if it is relevant for
-          your company. If an audit is required due to the company's size,
-          Bokoredo also has good contacts with auditing firms and handles all
+          your company. If an audit is required due to the company's size, Your
+          Pay also has good contacts with auditing firms and handles all
           necessary dialogue with the auditor.
         </motion.p>
         <motion.p variants={elementVariant}>
@@ -104,7 +104,7 @@ export default function FinancialStatements() {
           current accounting is checked, and smart adjustments are made to
           create a more accurate picture of the company's past years. When all
           work with the annual accounts has been completed and the annual report
-          has been signed, Bokoredo finally handles all reporting toThe Swedish
+          has been signed, Your Pay finally handles all reporting toThe Swedish
           Tax Agency. It could not be easier.
         </motion.p>
       </motion.div>

@@ -22,7 +22,7 @@ export default function WeTakeCareOfEverything() {
           of how the work is to be handled. Errors easily creep in that can be
           costly to correct and if you miss important dates and payments to the
           Swedish Tax Agency, you will receive unnecessary reminder fees as a
-          result. As a customer of Bokoredo, you can let go of everything that
+          result. As a customer of Your Pay, you can let go of everything that
           has to do with finances and know that you are in safe hands.
         </motion.p>
         <motion.h4 variants={elementVariant}>We offer:</motion.h4>
@@ -73,7 +73,7 @@ export default function WeTakeCareOfEverything() {
         initial="hidden"
       >
         <motion.p variants={elementVariant}>
-          As a customer of Bokoredo, you can safely hand over the responsibility
+          As a customer of Your Pay, you can safely hand over the responsibility
           for everything related to the current accounting, accounting and
           payroll administration to us. We make sure the work is done
           efficiently and that no mistakes are made. You send the current
@@ -85,8 +85,8 @@ export default function WeTakeCareOfEverything() {
           control over.
         </motion.p>
         <motion.p variants={elementVariant}>
-          In addition to current accounting, Bokoredo can also handle the
-          company's salaries. Onepayroll administratorfrom Bokoredo makes it
+          In addition to current accounting, Your Pay can also handle the
+          company's salaries. Onepayroll administratorfrom Your Pay makes it
           easier so you avoid the hassle of knowing how, for example, holidays
           and illness should be booked. As a customer, you therefore only simply
           report salary-based information to us online. Then we fix the rest.
@@ -100,13 +100,13 @@ export default function WeTakeCareOfEverything() {
           avoided.
         </motion.p>
         <motion.p variants={elementVariant}>
-          As a customer of Bokoredo, you choose how you want to invoice. Either
+          As a customer of Your Pay, you choose how you want to invoice. Either
           we put you in our simple online-based system, or you keep the solution
-          you have today. Regardless of which solution you choose, Bokoredo will
+          you have today. Regardless of which solution you choose, Your Pay will
           help you. For customers who themselves want to send out invoice
           reminders, a customer ledger is included in the period report as
           support. For customers who want help sending out invoice reminders,
-          Bokoredo is happy to help with that as well. And you, if you want, we
+          Your Pay is happy to help with that as well. And you, if you want, we
           will of course also handle the payments for you.
         </motion.p>
       </motion.div>

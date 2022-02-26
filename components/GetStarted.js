@@ -26,7 +26,7 @@ export default function GetStarted() {
           Get started with your bookkeeping & accounting!
         </motion.h3>
         <motion.p variants={elementVariant}>
-          Being a customer of Bokoredo is easy - we take care of your accounting
+          Being a customer of Your Pay is easy - we take care of your accounting
           online and completely digitally!
         </motion.p>
       </motion.div>
@@ -45,7 +45,7 @@ export default function GetStarted() {
               <p>01.</p>
               <h4>You work your way</h4>
               <p>
-                Being a customer of Bokoredo is easy - we take care of your
+                Being a customer of Your Pay is easy - we take care of your
                 accounting digitally and at a really low price. You run your
                 business as you wish, and we fix suitable systems based on your
                 conditions. If you want to create your invoices directly in our
@@ -71,7 +71,7 @@ export default function GetStarted() {
               <p>02.</p>
               <h4>Has your own accounting consultant</h4>
               <p>
-                At Bokoredo, you always have a dedicated accounting consultant
+                At Your Pay, you always have a dedicated accounting consultant
                 who has full control of your company. Your accounting consultant
                 is your sounding board for the company's financial issues, and
                 despite the fact that we are completely digital in the
@@ -103,7 +103,7 @@ export default function GetStarted() {
               <p>03.</p>
               <h4>Get a close look at the numbers</h4>
               <p>
-                As a customer of Bokoredo, you receive a nice and
+                As a customer of Your Pay, you receive a nice and
                 easy-to-understand report every month with all the necessary
                 information about your company's financial status; income
                 statement, balance sheet, accounts receivable and accounts

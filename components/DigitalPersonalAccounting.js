@@ -24,7 +24,7 @@ export default function DigitalPersonalAccounting() {
           Digital & personal accounting
         </motion.h3>
         <motion.p variants={elementVariant}>
-          At Bokoredo, you always get a dedicated accounting consultant who
+          At Your Pay, you always get a dedicated accounting consultant who
           gives you personal service in combination with smart technical
           solutions. This way, you do not have to choose between a digital
           service and personal contact; with us you get both parts. In our

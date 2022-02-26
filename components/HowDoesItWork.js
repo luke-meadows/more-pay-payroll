@@ -51,8 +51,8 @@ export default function HowDoesItWork() {
                   <i className="icon-ok-circled" />
                 </span>
                 <p>
-                  Feedback to agree on the first salary payment month via
-                  Bokoredo and we will sign the agreement, digitally.
+                  Feedback to agree on the first salary payment month via Your
+                  Pay and we will sign the agreement, digitally.
                 </p>
               </div>
               <div>
@@ -60,7 +60,7 @@ export default function HowDoesItWork() {
                   <i className="icon-ok-circled" />
                 </span>
                 <p>
-                  The start-up is gaining momentum. Bokoredo's start-up
+                  The start-up is gaining momentum. Your Pay's start-up
                   consultant will contact you.
                 </p>
               </div>
