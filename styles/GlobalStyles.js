@@ -31,9 +31,12 @@ export const GlobalStyles = createGlobalStyle`
     --light-peach: #FCFAF2;
     --pale-blue: #EEFAF6;
     --dark-gray: #3C3C3B;
-    --container-horizontal-padding:18rem;
+    --container-horizontal-padding:22rem;
     box-sizing: border-box;
     font-size: 10px;
+    @media only screen and (max-width: 1600px){
+      --container-horizontal-padding: 18rem;
+    }
     @media only screen and (max-width: 1440px){
       --container-horizontal-padding: 12rem;
     }

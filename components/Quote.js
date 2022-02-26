@@ -96,7 +96,7 @@ const StyledEstimate = styled(motion.div)`
   border-radius: 1rem;
   position: ${(props) => (props.size === 'large' ? 'initial' : 'absolute')};
   right: var(--container-horizontal-padding);
-  top: -10rem;
+  top: -15rem;
   width: ${(props) => (props.size === 'large' ? '100%' : '40rem')};
   background: white;
   padding: ${(props) =>

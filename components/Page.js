@@ -12,7 +12,7 @@ export default function Page({ children }) {
         exit="exit"
         transition={{ type: 'linear' }}
       />
-      <motion className="div">{children}</motion>
+      <motion.div>{children}</motion.div>
     </StyledPage>
   );
 }

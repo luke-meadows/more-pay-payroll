@@ -95,16 +95,14 @@ const Section = styled(motion.section)`
 const CardContainer = styled(motion.div)`
   display: flex;
   justify-content: space-between;
-  margin-top: 10rem;
+  margin: 12rem auto 0 auto;
+  max-width: 1350px;
 `;
 const OuterCard = styled.div`
   box-shadow: var(--bs);
   display: flex;
   background: ${(props) => props.backgroundColor};
-  max-width: 60rem;
-  @media only screen and (max-width: 1440px) {
-    max-width: 45%;
-  }
+  max-width: 45%;
 `;
 
 const Card = styled(motion.div)`
