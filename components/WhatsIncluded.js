@@ -1,14 +1,23 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { containerVariant, elementVariant } from '../lib/animations';
+import useScroll from '../lib/useScroll';
 export default function WhatsIncluded() {
+  const [element, controls] = useScroll();
   return (
-    <Section>
-      <h3>What&apos;s included?</h3>
-      <p>
+    <Section
+      variants={containerVariant}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
+      <motion.h3 variants={elementVariant}>What&apos;s included?</motion.h3>
+      <motion.p variants={elementVariant}>
         We have developed an accounting service as we ourselves would like it to
         be; smart technology, competent colleagues and decent conditions!
-      </p>
+      </motion.p>
       <CardContainer>
-        <Card color="var(--peach)">
+        <Card variants={elementVariant} color="var(--peach)">
           <h4>Simple and modern solutions</h4>
           <div>
             <span>
@@ -36,7 +45,7 @@ export default function WhatsIncluded() {
           </div>
         </Card>
 
-        <Card color="var(--blue)">
+        <Card variants={elementVariant} color="var(--blue)">
           <h4>Personal support</h4>
           <div>
             <span>
@@ -64,7 +73,7 @@ export default function WhatsIncluded() {
           </div>
         </Card>
 
-        <Card color="var(--peach)">
+        <Card variants={elementVariant} color="var(--peach)">
           <h4>The little extra</h4>
           <div>
             <span>
@@ -90,7 +99,7 @@ export default function WhatsIncluded() {
   );
 }
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   padding: 0rem var(--container-horizontal-padding) 10rem
     var(--container-horizontal-padding);
   display: flex;
@@ -107,7 +116,7 @@ const CardContainer = styled.div`
   gap: 5rem;
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   background: ${(props) => props.color};
   padding: 2rem 5rem 5rem 5rem;
   div {

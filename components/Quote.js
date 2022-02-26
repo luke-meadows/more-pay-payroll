@@ -42,7 +42,7 @@ export default function Quote({ size }) {
               onChange={handleChange}
               value={inputs.salaries}
               min={0}
-              max={100}
+              max={99}
             />
           </RangeSlider>
           <label htmlFor="salaries">Number of salaries per month</label>
@@ -56,7 +56,7 @@ export default function Quote({ size }) {
               onChange={handleChange}
               value={inputs.invoices}
               min={0}
-              max={100}
+              max={99}
             />
           </RangeSlider>
           <label htmlFor="invoices">
@@ -72,7 +72,7 @@ export default function Quote({ size }) {
               onChange={handleChange}
               value={inputs.receipts}
               min={0}
-              max={200}
+              max={99}
             />
           </RangeSlider>
           <label htmlFor="receipts">Number of receipts per month</label>

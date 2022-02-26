@@ -34,6 +34,9 @@ export const GlobalStyles = createGlobalStyle`
     --container-horizontal-padding:18rem;
     box-sizing: border-box;
     font-size: 10px;
+    @media only screen and (max-width: 1440px){
+      --container-horizontal-padding: 12rem;
+    }
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -44,7 +47,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
 
-    color: var(--dark-gray);
+    /* color: var(--dark-gray); */
   }
   a {
     text-decoration: none;

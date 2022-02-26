@@ -81,7 +81,7 @@ const Content = styled.div`
     margin: 0;
   }
   p {
-    width: 80ch;
+    width: 70ch;
     line-height: 1.5;
     margin-bottom: 2rem;
   }
