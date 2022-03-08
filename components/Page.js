@@ -18,9 +18,9 @@ export default function Page({ children }) {
 }
 
 const StyledPage = styled(motion.div)`
-  min-height: 100vh;
+  min-height: calc(100vh - 9rem);
   position: relative;
-  margin-top: 9rem;
+  margin-top: var(--header-height);
 `;
 
 const PageTransitioner = styled(motion.div)`

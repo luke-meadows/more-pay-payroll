@@ -14,7 +14,9 @@ export default function Header() {
         <Link href="/financial-statements">Financial statements</Link>
         <Link href="/payroll-administration">Payroll administration</Link>
       </Nav>
-      <Button>Contact Us</Button>
+      <Link href="/contact">
+        <Button>Contact Us</Button>
+      </Link>
     </StyledHeader>
   );
 }
@@ -22,7 +24,7 @@ export default function Header() {
 const StyledHeader = styled.header`
   z-index: 2;
   padding: 0 var(--container-horizontal-padding);
-  height: 9rem;
+  height: var(--header-height);
   font-family: 'Century Gothic';
   font-weight: bold;
   display: flex;

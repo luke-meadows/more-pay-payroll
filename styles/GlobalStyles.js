@@ -31,7 +31,9 @@ export const GlobalStyles = createGlobalStyle`
     --light-peach: #FCFAF2;
     --pale-blue: #EEFAF6;
     --dark-gray: #3C3C3B;
+    --light-gray: #0202023c;
     --container-horizontal-padding:22rem;
+    --header-height: 9rem;
     box-sizing: border-box;
     font-size: 10px;
     @media only screen and (max-width: 1600px){
