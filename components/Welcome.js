@@ -39,6 +39,8 @@ const WelcomeContainer = styled(motion.section)`
   background-position: center;
   position: relative;
   overflow: hidden;
+  @media only screen and (max-width: 1240px) {
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -59,6 +61,12 @@ const Overlay = styled.div`
   background: var(--light-peach);
   transform: skew(-10deg);
   z-index: 1;
+  @media only screen and (max-width: 1240px) {
+    transform: skew(0deg);
+    width: 100vw;
+    left: 0;
+    opacity: 0.8;
+  }
 `;
 
 const Content = styled(motion.div)`
@@ -71,6 +79,21 @@ const Content = styled(motion.div)`
   }
   p {
     font-size: 2rem;
+  }
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
+  }
+  @media only screen and (max-width: 750px) {
+    h2 {
+      font-size: 3rem;
+      font-weight: 100;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    button {
+      transform: scale(0.5);
+    }
   }
 `;
 

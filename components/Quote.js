@@ -135,6 +135,19 @@ const StyledEstimate = styled(motion.div)`
     flex-direction: column;
     align-items: ${(props) => (props.size === 'large' ? 'center' : 'none')};
   }
+  @media only screen and (max-width: 1240px) {
+    padding: 6rem var(--container-horizontal-padding);
+    display: ${(props) => (props.size === 'large' ? 'initial' : 'none')};
+    pointer-event: ${(props) => (props.size === 'large' ? 'all' : 'none')};
+    text-align: center;
+    h4 {
+      font-size: 1.8rem;
+      font-weight: 100;
+    }
+    p {
+      margin: 0 2rem;
+    }
+  }
 `;
 const SliderContainer = styled(motion.div)`
   display: ${(props) => (props.size === 'large' ? 'grid' : 'initial')};
@@ -142,6 +155,14 @@ const SliderContainer = styled(motion.div)`
   column-gap: 5rem;
   width: 100%;
   padding: ${(props) => (props.size === 'large' ? '0 5rem 0 10rem' : '0')};
+  @media only screen and (max-width: 1240px) {
+    padding: 0;
+    justify-items: center;
+    margin: auto;
+    margin-top: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0;
+  }
 `;
 export const RangeSlider = styled.div`
   display: flex;

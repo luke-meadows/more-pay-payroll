@@ -90,6 +90,11 @@ const Section = styled(motion.section)`
     width: 55ch;
     line-height: 1.3;
   }
+  @media only screen and (max-width: 1240px) {
+    p {
+      width: 100%;
+    }
+  }
 `;
 
 const CardContainer = styled(motion.div)`
@@ -97,12 +102,19 @@ const CardContainer = styled(motion.div)`
   justify-content: space-between;
   margin: 12rem auto 0 auto;
   max-width: 1350px;
+  @media only screen and (max-width: 1240px) {
+    flex-direction: column;
+  }
 `;
 const OuterCard = styled.div`
   box-shadow: var(--bs);
   display: flex;
   background: ${(props) => props.backgroundColor};
   max-width: 45%;
+  @media only screen and (max-width: 1240px) {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Card = styled(motion.div)`

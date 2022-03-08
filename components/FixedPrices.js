@@ -140,6 +140,9 @@ const CardContainer = styled.div`
   column-gap: 5rem;
   row-gap: 5rem;
   margin-top: 6rem;
+  @media only screen and (max-width: 1240px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 const Card = styled(motion.div)`
   border-radius: 0.3rem;

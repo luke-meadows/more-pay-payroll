@@ -59,6 +59,9 @@ const Section = styled(motion.section)`
   display: flex;
   align-items: center;
   background: var(--light-peach);
+  @media only screen and (max-width: 1240px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const ImageContainer = styled(motion.div)`
@@ -84,5 +87,22 @@ const Content = styled.div`
     width: 70ch;
     line-height: 1.5;
     margin-bottom: 2rem;
+  }
+  @media only screen and (max-width: 1240px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      margin-top: 2rem;
+    }
+    p,
+    h3,
+    h4 {
+      width: 100%;
+      text-align: center;
+    }
+    button {
+      width: fit-content;
+    }
   }
 `;

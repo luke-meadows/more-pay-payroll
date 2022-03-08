@@ -40,7 +40,7 @@ export const GlobalStyles = createGlobalStyle`
       --container-horizontal-padding: 18rem;
     }
     @media only screen and (max-width: 1440px){
-      --container-horizontal-padding: 12rem;
+      --container-horizontal-padding: 4rem;
     }
   }
   *, *:before, *:after {

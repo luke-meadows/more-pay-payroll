@@ -116,6 +116,9 @@ const Section = styled.section`
   padding: 6rem var(--container-horizontal-padding);
   width: 1200px;
   margin: 0 auto;
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
+  }
   h6 {
     font-size: 2rem;
     margin-bottom: 0;

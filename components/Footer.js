@@ -36,6 +36,10 @@ const StyledFooter = styled.footer`
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: center;
+  @media only screen and (max-width: 1240px) {
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
 const Column = styled.div`
@@ -54,5 +58,8 @@ const Column = styled.div`
   }
   span {
     margin-right: 1rem;
+  }
+  @media only screen and (max-width: 1240px) {
+    padding: 0;
   }
 `;
