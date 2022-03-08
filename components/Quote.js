@@ -7,8 +7,12 @@ import useScroll from '../lib/useScroll';
 
 export default function Quote({ size }) {
   const [element, controls] = useScroll();
-  const initial = { salaries: 3, receipts: 50, invoices: 20 };
-  const { inputs, handleChange } = useForm({ initial });
+  const initial = {
+    salaries: 3,
+    receipts: 50,
+    invoices: 20,
+  };
+  const { inputs, handleChange } = useForm(initial);
   function handleSubmit(e) {
     e.preventDefault();
     console.log(inputs);

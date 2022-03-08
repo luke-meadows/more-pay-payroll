@@ -18,7 +18,7 @@ const Content = styled(motion.div)`
   z-index: 2;
   padding: 6rem var(--container-horizontal-padding);
   width: 100%;
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   justify-content: space-between;
   background: var(--pale-blue);

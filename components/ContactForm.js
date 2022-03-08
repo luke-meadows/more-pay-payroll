@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import { handleSubmit } from '../lib/ContactFormSubmit';
 import useForm from '../lib/useForm';
 import { Button } from './Header';
 export default function ContactForm() {
-  const { inputs, handleChange } = useForm({
+  const [sending, setSending] = useState();
+  const { inputs, handleChange, clearForm } = useForm({
     name: '',
     email: '',
     message: '',
@@ -10,35 +13,43 @@ export default function ContactForm() {
   return (
     <FormContainer>
       <h3>Send a contact request</h3>
-      <form>
+      <form
+        action="submit"
+        onSubmit={(e) => handleSubmit(e, inputs, clearForm, setSending)}
+      >
         <label htmlFor="name">Name</label>
         <input
-          value={inputs.name}
-          onChange={handleChange}
-          type="text"
           name="name"
+          onChange={handleChange}
+          value={inputs.name}
+          type="text"
           placeholder="Your name"
+          required
         />
         <label htmlFor="email">Email</label>
         <input
+          name="email"
+          type="email"
+          placeholder="Your email"
           value={inputs.email}
           onChange={handleChange}
-          type="email"
-          name="email"
-          placeholder="Your email"
+          required
         />
         <label htmlFor="message">Message</label>
         <textarea
-          value={inputs.message}
-          onChange={handleChange}
           name="message"
           placeholder="Message..."
+          onChange={handleChange}
+          value={inputs.message}
+          required
         />
         <p>
           By continuing, I accept MorePay's{' '}
           <span> data protection policy.</span>
         </p>
-        <Button type="submit">Submit</Button>
+        <Button disabled={sending} type="submit">
+          Submit
+        </Button>
       </form>
     </FormContainer>
   );
@@ -92,5 +103,9 @@ const FormContainer = styled.div`
         text-decoration: underline;
       }
     }
+  }
+  button[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
   }
 `;
