@@ -47,10 +47,13 @@ const Column = styled.div`
   padding: 0 10rem;
   display: flex;
   flex-direction: column;
-  h4,
+
   p,
   a {
     margin: 0.5rem 0;
+  }
+  h4 {
+    margin: 0rem 0 2rem 0;
   }
   p,
   a {
@@ -61,5 +64,13 @@ const Column = styled.div`
   }
   @media only screen and (max-width: 1240px) {
     padding: 0;
+    p,
+    a {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 `;

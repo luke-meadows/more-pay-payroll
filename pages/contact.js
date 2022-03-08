@@ -22,6 +22,9 @@ const Content = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   background: var(--pale-blue);
+  @media only screen and (max-width: 1240px) {
+    flex-direction: column;
+  }
   h2 {
     font-size: 4rem;
     font-weight: 100;

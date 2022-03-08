@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Futura PT';
-    src: url('font/FuturaPTMedium.otf') format('otf');
+    src: url('/font/FuturaPTMedium.otf');
     font-weight: normal;
     font-style: normal;
   }
@@ -36,23 +36,29 @@ export const GlobalStyles = createGlobalStyle`
     --header-height: 9rem;
     box-sizing: border-box;
     font-size: 10px;
+    padding: 0;
+    margin: 0;
     @media only screen and (max-width: 1600px){
       --container-horizontal-padding: 18rem;
     }
     @media only screen and (max-width: 1440px){
       --container-horizontal-padding: 4rem;
     }
+    @media only screen and (max-width: 600px){
+      --container-horizontal-padding: 2rem;
+    }
   }
   *, *:before, *:after {
     box-sizing: inherit;
+
   }
   body {
-    font-family: 'Futura PT', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Futura PT',
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-
     color: var(--dark-gray);
+
   }
   a {
     text-decoration: none;
@@ -63,7 +69,7 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: underline;
   }
   button {
-    font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    font-family: 'Futura PT'
   }
   h1,h2,h3,h4,h5,h6{
     font-family: 'Century Gothic';

@@ -34,6 +34,10 @@ export default function ContactInformation() {
 
 const StyledContactInformation = styled.div`
   margin-right: 10rem;
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
+    margin-right: 0rem;
+  }
 `;
 
 const ContactMethodContainer = styled.div`

@@ -156,10 +156,8 @@ const SliderContainer = styled(motion.div)`
   width: 100%;
   padding: ${(props) => (props.size === 'large' ? '0 5rem 0 10rem' : '0')};
   @media only screen and (max-width: 1240px) {
-    padding: 0;
-    justify-items: center;
+    padding: 2rem;
     margin: auto;
-    margin-top: 2rem;
     grid-template-columns: repeat(1, 1fr);
     column-gap: 0;
   }
@@ -171,14 +169,12 @@ export const RangeSlider = styled.div`
     min-width: 3rem;
     font-size: 2.2rem;
     margin-right: 1rem;
-    text-align: left;
   }
 
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     input[type='range'] {
       overflow: hidden;
-      width: ${(props) => (props.size === 'large' ? '40rem' : '100%')};
-
+      width: ${(props) => (props.size === 'large' ? '40rem' : '50%')};
       -webkit-appearance: none;
       background-color: rgba(0, 0, 0, 0.3);
     }

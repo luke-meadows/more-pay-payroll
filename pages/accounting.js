@@ -13,7 +13,6 @@ export default function accounting() {
   return (
     <Page>
       <Welcome bannerOptions={accountingBannerOptions} />
-      <Quote size="large" />
       <WhatsIncluded />
       <GetStarted />
       <OurCustomers />

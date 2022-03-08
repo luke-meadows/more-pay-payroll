@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <Welcome bannerOptions={homeBannerOptions} />
       <DigitalPersonalAccounting />
-      <Quote size="large" />
+      {/* <Quote size="large" /> */}
       <AccountingThroughout />
       <OurCustomers />
     </Page>

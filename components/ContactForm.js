@@ -63,6 +63,10 @@ const FormContainer = styled.div`
   padding: 4rem;
   width: 50%;
   margin-left: 10rem;
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
+    margin-left: 0rem;
+  }
   h3 {
     font-size: 2.5rem;
     margin: 0;
