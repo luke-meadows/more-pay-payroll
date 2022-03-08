@@ -1,16 +1,39 @@
 import styled from 'styled-components';
+import useForm from '../lib/useForm';
 import { Button } from './Header';
 export default function ContactForm() {
+  const { inputs, handleChange } = useForm({
+    name: '',
+    email: '',
+    message: '',
+  });
   return (
     <FormContainer>
       <h3>Send a contact request</h3>
       <form>
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" placeholder="Your name" />
+        <input
+          value={inputs.name}
+          onChange={handleChange}
+          type="text"
+          name="name"
+          placeholder="Your name"
+        />
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" placeholder="Your email" />
+        <input
+          value={inputs.email}
+          onChange={handleChange}
+          type="email"
+          name="email"
+          placeholder="Your email"
+        />
         <label htmlFor="message">Message</label>
-        <textarea name="message" placeholder="Message..." />
+        <textarea
+          value={inputs.message}
+          onChange={handleChange}
+          name="message"
+          placeholder="Message..."
+        />
         <p>
           By continuing, I accept MorePay's{' '}
           <span> data protection policy.</span>
