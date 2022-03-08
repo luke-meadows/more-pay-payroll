@@ -66,7 +66,7 @@ export default function GetStarted() {
           animate={controls3}
           initial="hidden"
         >
-          <AltCard variants={elementVariant}>
+          <AltCard variants={elementVariant} flip={true}>
             <Text>
               <p>02.</p>
               <h4>Has your own accounting consultant</h4>
@@ -125,7 +125,7 @@ export default function GetStarted() {
           animate={controls5}
           initial="hidden"
         >
-          <AltCard variants={elementVariant}>
+          <AltCard variants={elementVariant} flip={true}>
             <Text>
               <p>04.</p>
               <h4>And work wherever you want</h4>
@@ -162,15 +162,24 @@ export const AltCardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   row-gap: 10rem;
+  @media only screen and (max-width: 1240px) {
+    row-gap: 5rem;
+  }
 `;
 export const AltCard = styled(motion.div)`
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 1240px) {
+    flex-direction: ${(props) => (props.flip ? 'column-reverse' : 'column')};
+  }
 `;
 const ImageContainer = styled.div`
   width: 46%;
   img {
     border-radius: 0.3rem;
+  }
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
   }
 `;
 const Text = styled.div`
@@ -178,5 +187,8 @@ const Text = styled.div`
   text-align: left;
   * {
     margin: 1rem;
+  }
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
   }
 `;
