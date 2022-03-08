@@ -51,6 +51,14 @@ const Section = styled(motion.section)`
       margin-right: 6rem;
     }
   }
+  @media only screen and (max-width: 1240px) {
+    flex-direction: column;
+    div {
+      p {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 const ImageContainer = styled(motion.div)`

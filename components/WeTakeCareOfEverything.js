@@ -119,6 +119,10 @@ const Section = styled.section`
     var(--container-horizontal-padding);
   width: 70%;
   margin: 0 auto;
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const ServiceContainer = styled(motion.div)`
@@ -135,5 +139,8 @@ const ServiceContainer = styled(motion.div)`
       margin-right: 1rem;
       color: var(--orange);
     }
+  }
+  @media only screen and (max-width: 1240px) {
+    margin-bottom: 5rem;
   }
 `;

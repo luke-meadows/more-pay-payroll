@@ -60,7 +60,8 @@ const Section = styled(motion.section)`
   align-items: center;
   background: var(--light-peach);
   @media only screen and (max-width: 1240px) {
-    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 3rem var(--container-horizontal-padding);
   }
 `;
 
@@ -72,16 +73,22 @@ const ImageContainer = styled(motion.div)`
     height: 100%;
     border-radius: 0.5rem;
   }
+  @media only screen and (max-width: 1240px) {
+    display: none;
+  }
 `;
 
 const Content = styled.div`
   margin-right: 6rem;
-
+  @media only screen and (max-width: 1240px) {
+    margin-right: 0;
+  }
   h3 {
     margin: 0 0 2rem 0;
   }
   h4 {
     margin: 0;
+    line-height: 1.5;
   }
   p {
     width: 70ch;

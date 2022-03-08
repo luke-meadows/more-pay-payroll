@@ -74,7 +74,7 @@ export default function HowDoesItWork() {
           animate={controls3}
           initial="hidden"
         >
-          <AltCard variants={elementVariant}>
+          <AltCard variants={elementVariant} flip={true}>
             <Text>
               <p>02.</p>
               <h4>Ongoing financial Advice</h4>
@@ -173,6 +173,9 @@ const ImageContainer = styled.div`
   img {
     border-radius: 0.3rem;
   }
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
+  }
 `;
 const Text = styled.div`
   width: 46%;
@@ -196,5 +199,8 @@ const Text = styled.div`
   .bottom-p {
     margin-top: 3rem;
     font-weight: 500;
+  }
+  @media only screen and (max-width: 1240px) {
+    width: 100%;
   }
 `;

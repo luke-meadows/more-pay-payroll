@@ -9,7 +9,7 @@ import { containerVariant, elementVariant } from '../lib/animations';
 
 export default function DigitalPersonalAccounting() {
   const [element, controls] = useScroll(0.6);
-  const [element2, controls2] = useScroll(0.5);
+  const [element2, controls2] = useScroll(0.1);
 
   return (
     <Section>
@@ -104,6 +104,7 @@ const CardContainer = styled(motion.div)`
   max-width: 1350px;
   @media only screen and (max-width: 1240px) {
     flex-direction: column;
+    margin: 6rem auto 0 auto;
   }
 `;
 const OuterCard = styled.div`

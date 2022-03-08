@@ -11,7 +11,10 @@ export default function Header() {
           More Pay<span>.</span>
         </Logo>
       </Link>
-      <Nav className={mobileNavActive ? 'active' : ''}>
+      <Nav
+        className={mobileNavActive ? 'active' : ''}
+        onClick={() => setMobileNavActive(false)}
+      >
         <Link href="/accounting">Accounting</Link>
         <Link href="/financial-statements">Financial statements</Link>
         <Link href="/payroll-administration">Payroll administration</Link>
@@ -84,7 +87,7 @@ const Nav = styled.nav`
     padding: 6rem;
     width: 100vw;
     transition: all 0.75s ease;
-    border: 1px solid blue;
+
     button,
     a {
       margin: 2rem 0;
